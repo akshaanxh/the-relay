@@ -1,0 +1,148 @@
+request_id,scenario,source,start_time,first_token_ms,total_ms,status,retries,tokens_in,tokens_out,retrieval_setting,answer_grade
+retrieval_setting_a_q01,retrieval_test_setting_a,stand-in,2026-11-13T08:26:42Z,147.7,249.4,ok,0,900,49,setting_a,correct
+retrieval_setting_a_q02,retrieval_test_setting_a,stand-in,2026-11-13T08:26:43Z,139.3,249.6,ok,0,903,53,setting_a,correct
+retrieval_setting_a_q03,retrieval_test_setting_a,stand-in,2026-11-13T08:26:43Z,198.9,274.9,ok,0,899,37,setting_a,correct
+retrieval_setting_a_q04,retrieval_test_setting_a,stand-in,2026-11-13T08:26:43Z,448.4,548.3,ok,0,902,49,setting_a,correct
+retrieval_setting_a_q05,retrieval_test_setting_a,stand-in,2026-11-13T08:26:44Z,164.5,254.3,ok,0,895,44,setting_a,correct
+retrieval_setting_a_q06,retrieval_test_setting_a,stand-in,2026-11-13T08:26:44Z,189.0,285.2,ok,0,899,49,setting_a,correct
+retrieval_setting_a_q07,retrieval_test_setting_a,stand-in,2026-11-13T08:26:44Z,363.8,475.2,ok,0,899,55,setting_a,correct
+retrieval_setting_a_q08,retrieval_test_setting_a,stand-in,2026-11-13T08:26:45Z,114.9,181.4,ok,0,781,32,setting_a,correct
+retrieval_setting_a_q09,retrieval_test_setting_a,stand-in,2026-11-13T08:26:45Z,not measured,1830.9,rate_limited,2,898,0,setting_a,wrong
+retrieval_setting_a_q10,retrieval_test_setting_a,stand-in,2026-11-13T08:26:47Z,not measured,1865.6,rate_limited,2,841,0,setting_a,wrong
+retrieval_setting_a_q11,retrieval_test_setting_a,stand-in,2026-11-13T08:26:49Z,not measured,1859.3,rate_limited,2,894,0,setting_a,wrong
+retrieval_setting_a_q12,retrieval_test_setting_a,stand-in,2026-11-13T08:26:51Z,not measured,1908.4,rate_limited,2,897,0,setting_a,wrong
+retrieval_setting_a_q13,retrieval_test_setting_a,stand-in,2026-11-13T08:26:53Z,115.8,206.9,ok,0,63,44,setting_a,refused_correctly
+retrieval_setting_a_q14,retrieval_test_setting_a,stand-in,2026-11-13T08:26:53Z,179.2,268.3,ok,0,59,44,setting_a,refused_correctly
+retrieval_setting_a_q15,retrieval_test_setting_a,stand-in,2026-11-13T08:26:53Z,148.2,230.3,ok,0,62,44,setting_a,refused_correctly
+retrieval_setting_b_q01,retrieval_test_setting_b,stand-in,2026-11-13T08:26:54Z,200.8,279.7,ok,0,3382,41,setting_b,correct
+retrieval_setting_b_q02,retrieval_test_setting_b,stand-in,2026-11-13T08:26:54Z,160.0,225.3,ok,0,3942,32,setting_b,correct
+retrieval_setting_b_q03,retrieval_test_setting_b,stand-in,2026-11-13T08:26:54Z,not measured,1914.1,rate_limited,2,3585,0,setting_b,wrong
+retrieval_setting_b_q04,retrieval_test_setting_b,stand-in,2026-11-13T08:26:56Z,not measured,1718.3,rate_limited,2,3669,0,setting_b,wrong
+retrieval_setting_b_q05,retrieval_test_setting_b,stand-in,2026-11-13T08:26:58Z,not measured,1914.8,rate_limited,2,3663,0,setting_b,wrong
+retrieval_setting_b_q06,retrieval_test_setting_b,stand-in,2026-11-13T08:27:00Z,not measured,1893.5,rate_limited,2,2895,0,setting_b,wrong
+retrieval_setting_b_q07,retrieval_test_setting_b,stand-in,2026-11-13T08:27:02Z,not measured,2027.6,rate_limited,2,3667,0,setting_b,wrong
+retrieval_setting_b_q08,retrieval_test_setting_b,stand-in,2026-11-13T08:27:04Z,not measured,1883.5,rate_limited,2,3402,0,setting_b,wrong
+retrieval_setting_b_q09,retrieval_test_setting_b,stand-in,2026-11-13T08:27:06Z,not measured,1845.7,rate_limited,2,3590,0,setting_b,wrong
+retrieval_setting_b_q10,retrieval_test_setting_b,stand-in,2026-11-13T08:27:08Z,not measured,1905.7,rate_limited,2,3068,0,setting_b,wrong
+retrieval_setting_b_q11,retrieval_test_setting_b,stand-in,2026-11-13T08:27:10Z,not measured,1975.7,rate_limited,2,4035,0,setting_b,wrong
+retrieval_setting_b_q12,retrieval_test_setting_b,stand-in,2026-11-13T08:27:12Z,not measured,2035.7,rate_limited,2,3515,0,setting_b,wrong
+retrieval_setting_b_q13,retrieval_test_setting_b,stand-in,2026-11-13T08:27:14Z,194.8,280.5,ok,0,63,44,setting_b,refused_correctly
+retrieval_setting_b_q14,retrieval_test_setting_b,stand-in,2026-11-13T08:27:14Z,190.3,277.4,ok,0,59,44,setting_b,refused_correctly
+retrieval_setting_b_q15,retrieval_test_setting_b,stand-in,2026-11-13T08:27:15Z,206.9,293.2,ok,0,62,44,setting_b,refused_correctly
+retrieval_setting_c_q01,retrieval_test_setting_c,stand-in,2026-11-13T08:27:15Z,98.5,196.5,ok,0,1446,52,setting_c,correct
+retrieval_setting_c_q02,retrieval_test_setting_c,stand-in,2026-11-13T08:27:15Z,170.6,343.5,ok,0,1683,87,setting_c,correct
+retrieval_setting_c_q03,retrieval_test_setting_c,stand-in,2026-11-13T08:27:16Z,167.3,249.2,ok,0,1679,37,setting_c,correct
+retrieval_setting_c_q04,retrieval_test_setting_c,stand-in,2026-11-13T08:27:16Z,244.6,345.0,ok,0,1682,49,setting_c,correct
+retrieval_setting_c_q05,retrieval_test_setting_c,stand-in,2026-11-13T08:27:16Z,not measured,1797.5,rate_limited,2,1675,0,setting_c,wrong
+retrieval_setting_c_q06,retrieval_test_setting_c,stand-in,2026-11-13T08:27:18Z,not measured,1968.2,rate_limited,2,1679,0,setting_c,wrong
+retrieval_setting_c_q07,retrieval_test_setting_c,stand-in,2026-11-13T08:27:20Z,not measured,1949.0,rate_limited,2,1679,0,setting_c,wrong
+retrieval_setting_c_q08,retrieval_test_setting_c,stand-in,2026-11-13T08:27:22Z,not measured,1134.2,rate_limited,2,1301,0,setting_c,wrong
+retrieval_setting_c_q09,retrieval_test_setting_c,stand-in,2026-11-13T08:27:24Z,not measured,1999.6,rate_limited,2,1489,0,setting_c,wrong
+retrieval_setting_c_q10,retrieval_test_setting_c,stand-in,2026-11-13T08:27:26Z,not measured,2026.4,rate_limited,2,1150,0,setting_c,wrong
+retrieval_setting_c_q11,retrieval_test_setting_c,stand-in,2026-11-13T08:27:28Z,not measured,1833.3,rate_limited,2,1674,0,setting_c,wrong
+retrieval_setting_c_q12,retrieval_test_setting_c,stand-in,2026-11-13T08:27:30Z,not measured,1826.8,rate_limited,2,1491,0,setting_c,wrong
+retrieval_setting_c_q13,retrieval_test_setting_c,stand-in,2026-11-13T08:27:31Z,159.0,247.7,ok,0,63,44,setting_c,refused_correctly
+retrieval_setting_c_q14,retrieval_test_setting_c,stand-in,2026-11-13T08:27:32Z,216.7,301.5,ok,0,59,44,setting_c,refused_correctly
+retrieval_setting_c_q15,retrieval_test_setting_c,stand-in,2026-11-13T08:27:32Z,175.1,265.3,ok,0,62,44,setting_c,refused_correctly
+steady_real_001,steady,real,2026-11-13T08:27:32Z,491.3,916.0,ok,0,1446,110,setting_c,correct
+steady_real_002,steady,real,2026-11-13T08:27:35Z,428.8,838.8,ok,0,1683,54,setting_c,correct
+steady_real_003,steady,real,2026-11-13T08:27:38Z,198.1,3093.8,ok,1,1679,27,setting_c,correct
+steady_real_004,steady,real,2026-11-13T08:27:43Z,186.2,20062.8,ok,2,1682,66,setting_c,correct
+steady_real_005,steady,real,2026-11-13T08:28:05Z,416.8,20362.9,ok,2,1675,105,setting_c,correct
+steady_real_006,steady,real,2026-11-13T08:28:28Z,175.7,17084.2,ok,2,1679,97,setting_c,correct
+steady_real_007,steady,real,2026-11-13T08:28:47Z,168.7,15509.2,ok,1,1679,16,setting_c,correct
+steady_real_008,steady,real,2026-11-13T08:29:04Z,176.7,13360.2,ok,1,1301,124,setting_c,correct
+steady_real_009,steady,real,2026-11-13T08:29:20Z,169.8,17358.8,ok,2,1489,161,setting_c,correct
+steady_real_010,steady,real,2026-11-13T08:29:39Z,168.0,10128.0,ok,1,1150,131,setting_c,correct
+burst_real_010,burst,real,2026-11-13T08:29:51Z,454.2,10626.3,ok,1,1150,132,setting_c,correct
+burst_real_008,burst,real,2026-11-13T08:29:51Z,not measured,11482.4,rate_limited,1,1301,0,setting_c,wrong
+burst_real_007,burst,real,2026-11-13T08:29:51Z,not measured,14802.2,rate_limited,1,1679,0,setting_c,wrong
+burst_real_005,burst,real,2026-11-13T08:29:51Z,not measured,15331.6,rate_limited,1,1675,0,setting_c,wrong
+burst_real_002,burst,real,2026-11-13T08:29:51Z,not measured,15353.2,rate_limited,1,1683,0,setting_c,wrong
+burst_real_001,burst,real,2026-11-13T08:29:51Z,not measured,15357.6,rate_limited,1,1446,0,setting_c,wrong
+burst_real_004,burst,real,2026-11-13T08:29:51Z,not measured,15352.3,rate_limited,1,1682,0,setting_c,wrong
+burst_real_006,burst,real,2026-11-13T08:29:51Z,not measured,15361.2,rate_limited,1,1679,0,setting_c,wrong
+burst_real_009,burst,real,2026-11-13T08:29:51Z,not measured,15351.9,rate_limited,1,1489,0,setting_c,wrong
+burst_real_003,burst,real,2026-11-13T08:29:51Z,not measured,15405.8,rate_limited,1,1679,0,setting_c,wrong
+burst_real_011,burst,real,2026-11-13T08:30:02Z,not measured,15246.0,rate_limited,1,1674,0,setting_c,wrong
+burst_real_012,burst,real,2026-11-13T08:30:03Z,542.9,14789.9,ok,1,1491,97,setting_c,correct
+overload_standin_001,sustained_overload,stand-in,2026-11-13T08:30:18Z,219.5,318.5,ok,0,1446,52,setting_c,correct
+overload_standin_004,sustained_overload,stand-in,2026-11-13T08:30:18Z,229.1,331.0,ok,0,1682,49,setting_c,correct
+overload_standin_003,sustained_overload,stand-in,2026-11-13T08:30:18Z,253.8,336.1,ok,0,1679,37,setting_c,correct
+overload_standin_005,sustained_overload,stand-in,2026-11-13T08:30:18Z,331.4,416.5,ok,0,1675,42,setting_c,correct
+overload_standin_006,sustained_overload,stand-in,2026-11-13T08:30:18Z,329.1,415.3,ok,0,1679,46,setting_c,correct
+overload_standin_002,sustained_overload,stand-in,2026-11-13T08:30:18Z,256.7,433.4,ok,0,1683,87,setting_c,correct
+overload_standin_007,sustained_overload,stand-in,2026-11-13T08:30:18Z,366.3,449.6,ok,0,1679,41,setting_c,correct
+overload_standin_009,sustained_overload,stand-in,2026-11-13T08:30:18Z,463.6,548.5,ok,0,1489,44,setting_c,correct
+overload_standin_008,sustained_overload,stand-in,2026-11-13T08:30:18Z,461.5,557.7,ok,0,1301,52,setting_c,correct
+overload_standin_010,sustained_overload,stand-in,2026-11-13T08:30:18Z,561.1,647.0,ok,0,1150,46,setting_c,correct
+overload_standin_014,sustained_overload,stand-in,2026-11-13T08:30:18Z,617.5,708.8,ok,0,59,44,setting_c,refused_correctly
+overload_standin_013,sustained_overload,stand-in,2026-11-13T08:30:18Z,665.5,753.2,ok,0,63,44,setting_c,refused_correctly
+overload_standin_012,sustained_overload,stand-in,2026-11-13T08:30:18Z,695.4,794.5,ok,0,1491,48,setting_c,correct
+overload_standin_015,sustained_overload,stand-in,2026-11-13T08:30:18Z,739.3,829.4,ok,0,62,44,setting_c,refused_correctly
+overload_standin_011,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1632.2,rate_limited,2,1674,0,setting_c,wrong
+overload_standin_016,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1855.7,rate_limited,2,1446,0,setting_c,wrong
+overload_standin_022,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1748.4,rate_limited,2,1679,0,setting_c,wrong
+overload_standin_020,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1868.5,rate_limited,2,1675,0,setting_c,wrong
+overload_standin_018,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1969.9,rate_limited,2,1679,0,setting_c,wrong
+overload_standin_017,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1990.8,rate_limited,2,1683,0,setting_c,wrong
+overload_standin_019,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1901.9,rate_limited,2,1682,0,setting_c,wrong
+overload_standin_021,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1951.2,rate_limited,2,1679,0,setting_c,wrong
+overload_standin_024,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1843.4,rate_limited,2,1489,0,setting_c,wrong
+overload_standin_025,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1831.8,rate_limited,2,1150,0,setting_c,wrong
+overload_standin_023,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1953.6,rate_limited,2,1301,0,setting_c,wrong
+overload_standin_026,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1947.0,rate_limited,2,1674,0,setting_c,wrong
+overload_standin_027,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1912.3,rate_limited,2,1491,0,setting_c,wrong
+overload_standin_028,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1940.9,rate_limited,2,63,0,setting_c,wrong
+overload_standin_029,sustained_overload,stand-in,2026-11-13T08:30:18Z,not measured,1921.9,rate_limited,2,59,0,setting_c,wrong
+overload_standin_030,sustained_overload,stand-in,2026-11-13T08:30:19Z,not measured,1758.4,rate_limited,2,62,0,setting_c,wrong
+overload_standin_031,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,1939.7,rate_limited,2,1446,0,setting_c,wrong
+overload_standin_036,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,1813.6,rate_limited,2,1679,0,setting_c,wrong
+overload_standin_032,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,1942.7,rate_limited,2,1683,0,setting_c,wrong
+overload_standin_035,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,1895.2,rate_limited,2,1675,0,setting_c,wrong
+overload_standin_037,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,1909.6,rate_limited,2,1679,0,setting_c,wrong
+overload_standin_039,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,1813.9,rate_limited,2,1489,0,setting_c,wrong
+overload_standin_033,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,2031.2,rate_limited,2,1679,0,setting_c,wrong
+overload_standin_034,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,2023.9,rate_limited,2,1682,0,setting_c,wrong
+overload_standin_038,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,2066.7,rate_limited,2,1301,0,setting_c,wrong
+overload_standin_040,sustained_overload,stand-in,2026-11-13T08:30:20Z,not measured,2046.9,rate_limited,2,1150,0,setting_c,wrong
+halved_standin_001,limit_halved,stand-in,2026-11-13T08:30:22Z,169.8,266.4,ok,0,1446,52,setting_c,correct
+halved_standin_002,limit_halved,stand-in,2026-11-13T08:30:22Z,146.5,317.4,ok,0,1683,87,setting_c,correct
+halved_standin_003,limit_halved,stand-in,2026-11-13T08:30:22Z,385.3,462.5,ok,0,1679,37,setting_c,correct
+halved_standin_007,limit_halved,stand-in,2026-11-13T08:30:22Z,381.7,460.7,ok,0,1679,41,setting_c,correct
+halved_standin_006,limit_halved,stand-in,2026-11-13T08:30:22Z,402.8,491.5,ok,0,1679,46,setting_c,correct
+halved_standin_009,limit_halved,stand-in,2026-11-13T08:30:22Z,428.1,512.9,ok,0,1489,44,setting_c,correct
+halved_standin_008,limit_halved,stand-in,2026-11-13T08:30:22Z,424.9,526.4,ok,0,1301,52,setting_c,correct
+halved_standin_005,limit_halved,stand-in,2026-11-13T08:30:22Z,460.7,545.1,ok,0,1675,42,setting_c,correct
+halved_standin_010,limit_halved,stand-in,2026-11-13T08:30:22Z,549.2,636.3,ok,0,1150,46,setting_c,correct
+halved_standin_004,limit_halved,stand-in,2026-11-13T08:30:22Z,not measured,1713.2,rate_limited,2,1682,0,setting_c,wrong
+halved_standin_011,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1885.1,rate_limited,2,1674,0,setting_c,wrong
+halved_standin_013,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1812.5,rate_limited,2,63,0,setting_c,wrong
+halved_standin_016,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1771.7,rate_limited,2,1446,0,setting_c,wrong
+halved_standin_018,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1770.9,rate_limited,2,1679,0,setting_c,wrong
+halved_standin_012,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,2051.1,rate_limited,2,1491,0,setting_c,wrong
+halved_standin_015,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1879.3,rate_limited,2,62,0,setting_c,wrong
+halved_standin_014,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1958.1,rate_limited,2,59,0,setting_c,wrong
+halved_standin_017,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,1989.7,rate_limited,2,1683,0,setting_c,wrong
+halved_standin_019,limit_halved,stand-in,2026-11-13T08:30:23Z,not measured,2013.6,rate_limited,2,1682,0,setting_c,wrong
+halved_standin_020,limit_halved,stand-in,2026-11-13T08:30:24Z,not measured,1819.1,rate_limited,2,1675,0,setting_c,wrong
+halved_standin_021,limit_halved,stand-in,2026-11-13T08:30:24Z,not measured,1855.6,rate_limited,2,1679,0,setting_c,wrong
+halved_standin_022,limit_halved,stand-in,2026-11-13T08:30:25Z,not measured,1859.0,rate_limited,2,1679,0,setting_c,wrong
+halved_standin_023,limit_halved,stand-in,2026-11-13T08:30:25Z,not measured,1820.1,rate_limited,2,1301,0,setting_c,wrong
+halved_standin_024,limit_halved,stand-in,2026-11-13T08:30:25Z,not measured,1913.2,rate_limited,2,1489,0,setting_c,wrong
+halved_standin_025,limit_halved,stand-in,2026-11-13T08:30:25Z,not measured,1921.7,rate_limited,2,1150,0,setting_c,wrong
+exhausted_standin_001,daily_budget_exhausted,stand-in,2026-11-13T08:30:27Z,not measured,1831.4,rate_limited,2,1446,0,setting_c,wrong
+exhausted_standin_002,daily_budget_exhausted,stand-in,2026-11-13T08:30:28Z,not measured,1911.0,rate_limited,2,1683,0,setting_c,wrong
+exhausted_standin_003,daily_budget_exhausted,stand-in,2026-11-13T08:30:30Z,not measured,1765.1,rate_limited,2,1679,0,setting_c,wrong
+exhausted_standin_004,daily_budget_exhausted,stand-in,2026-11-13T08:30:32Z,not measured,1923.3,rate_limited,2,1682,0,setting_c,wrong
+exhausted_standin_005,daily_budget_exhausted,stand-in,2026-11-13T08:30:34Z,not measured,1799.6,rate_limited,2,1675,0,setting_c,wrong
+exhausted_standin_006,daily_budget_exhausted,stand-in,2026-11-13T08:30:36Z,not measured,1775.5,rate_limited,2,1679,0,setting_c,wrong
+exhausted_standin_007,daily_budget_exhausted,stand-in,2026-11-13T08:30:38Z,not measured,2089.6,rate_limited,2,1679,0,setting_c,wrong
+exhausted_standin_008,daily_budget_exhausted,stand-in,2026-11-13T08:30:40Z,not measured,1927.0,rate_limited,2,1301,0,setting_c,wrong
+exhausted_standin_009,daily_budget_exhausted,stand-in,2026-11-13T08:30:42Z,not measured,1961.5,rate_limited,2,1489,0,setting_c,wrong
+exhausted_standin_010,daily_budget_exhausted,stand-in,2026-11-13T08:30:44Z,not measured,1889.8,rate_limited,2,1150,0,setting_c,wrong
+exhausted_standin_011,daily_budget_exhausted,stand-in,2026-11-13T08:30:45Z,not measured,1767.8,rate_limited,2,1674,0,setting_c,wrong
+exhausted_standin_012,daily_budget_exhausted,stand-in,2026-11-13T08:30:47Z,not measured,2024.2,rate_limited,2,1491,0,setting_c,wrong
+exhausted_standin_013,daily_budget_exhausted,stand-in,2026-11-13T08:30:49Z,not measured,1862.4,rate_limited,2,63,0,setting_c,wrong
+exhausted_standin_014,daily_budget_exhausted,stand-in,2026-11-13T08:30:51Z,not measured,1811.6,rate_limited,2,59,0,setting_c,wrong
+exhausted_standin_015,daily_budget_exhausted,stand-in,2026-11-13T08:30:53Z,not measured,2026.7,rate_limited,2,62,0,setting_c,wrong

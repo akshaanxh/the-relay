@@ -1,0 +1,16 @@
+# The Relay - Production Dependencies
+# Python >= 3.10
+
+# Network and HTTP Client
+requests>=2.31.0
+httpx>=0.27.0
+
+# Numerical, Evaluation & Analytics
+numpy>=1.26.0
+pandas>=2.0.0
+
+# Text Processing & Normalization
+beautifulsoup4>=4.12.0
+
+# Optional: Enhanced Terminal UI
+rich>=13.7.0
