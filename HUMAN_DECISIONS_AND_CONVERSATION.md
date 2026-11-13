@@ -1,9 +1,9 @@
 # Human Engineering Audit Trail & Architecture Decisions
-**Role:** ML Engineering Intern Assignment — Vaani Research  
+**Role:** Vaani Research — Production AI Systems Project  
 **Focus:** Human Steering, Real-World Clashes, and Defensible Systems Trade-offs  
 
 > *"We expect most of you will build this with an AI coding assistant, and that is welcome. What we are looking at is how well you direct it: how you frame the problem, how you check what it gives you, and where you overrule it. We are also looking for you in the submission: the choices, measurements and reasoning that someone else's prompt would not have produced. A short live conversation follows where you explain your results and change your system, so only submit what you can defend."*  
-> — **Assignment Brief, Page 4**
+> — **Project Specifications, Page 4**
 
 ---
 

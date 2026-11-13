@@ -1,63 +1,62 @@
 # The Relay: Adaptive, Rate-Constrained Research Assistant
-> **Role:** ML Engineering Intern Assignment — Vaani Research  
-> **Candidate:** Take-home Submission  
-> **Key Technologies:** Python 3.10+, Async Telemetry, Groq API (`qwen/qwen3.8-27b`), Calibrated Mock Model Service, BM25 + LaTeX AST Metadata Fusion.
+> **Vaani Research — Production AI Systems Project**  
+> **Core Architecture:** Asynchronous Telemetry, Rate-Constrained LLM Client, Calibrated Mock Stand-in Engine, AST-Aware BM25 Passage Retrieval.
 
 ---
 
 ## 1. Executive Summary & Architecture
 
-**The Relay** is an adaptive, citation-enforced question-answering system designed to operate under strict API quota ceilings. It answers technical questions over three specific arXiv papers:
+**The Relay** is an adaptive, citation-enforced question-answering system engineered to operate reliably under strict upstream rate limits and token budget ceilings. It answers technical questions with strict inline citations over three arXiv research papers:
 1. *Attention Is All You Need* (`1706.03762v7`)
 2. *Moshi: a speech-text foundation model for real-time dialogue* (`2410.00037v1`)
 3. *Dynamic Chunking for End-to-End Hierarchical Sequence Modeling* (`2507.07955v2`)
 
 ```mermaid
 flowchart TD
-    UserQuery([User Technical Query]) --> Step1[Step 1: Domain & Scope Router\nFast Keyword / Paper Entity Match]
+    UserQuery(["User Technical Query"]) --> Step1["Step 1: Domain & Scope Router<br/>Fast Keyword & Entity Match"]
     
-    Step1 -->|Out-of-Scope / Non-Paper Query| RefusalEarly[Zero-Token Immediate Refusal\nCost: $0.00 | Latency: <1ms]
-    Step1 -->|In-Scope Paper Question| Step2[Step 2: Retrieval Tool Call\nBM25 over LaTeX Source Chunks]
+    Step1 -->|Out-of-Scope Query| RefusalEarly["Zero-Token Immediate Refusal<br/>Cost: $0.00 | Latency: sub-millisecond"]
+    Step1 -->|In-Scope Paper Question| Step2["Step 2: Retrieval Tool Call<br/>BM25 over LaTeX Source Chunks"]
     
-    Step2 --> Step3{Step 3: Relevance Gate\nScore Evaluation}
-    Step3 -->|Score < 5.0| RefusalUncovered[Refuse: Papers do not cover]
-    Step3 -->|5.0 <= Score < 9.0| Step3Loop[Bounded Loop (Max 1)\nReformulate & Re-query]
+    Step2 --> Step3{"Step 3: Relevance Gate<br/>Score Evaluation"}
+    Step3 -->|Score below 5.0| RefusalUncovered["Refuse: Papers do not cover"]
+    Step3 -->|Score between 5.0 and 9.0| Step3Loop["Bounded Loop: Max 1 Iteration<br/>Reformulate & Re-query"]
     Step3Loop -.-> Step2
-    Step3 -->|Score >= 9.0| Step4[Step 4: Synthesis Generator\nGroq qwen3.8-27b OR Calibrated Stand-in]
+    Step3 -->|Score 9.0 or higher| Step4["Step 4: Synthesis Generator<br/>Groq qwen3.8-27b OR Calibrated Stand-in"]
     
-    Step4 --> Step5{Step 5: Verification Guard\nCitation & Hallucination Check}
-    Step5 -->|Valid Inline Citation| VerifiedAnswer([Cited Output: [Paper, Section]])
-    Step5 -->|Missing Citation| DegradedRefusal([Fallback Refusal])
+    Step4 --> Step5{"Step 5: Verification Guard<br/>Citation & Hallucination Check"}
+    Step5 -->|Valid Inline Citation| VerifiedAnswer(["Verified Output with Inline Citations"])
+    Step5 -->|Missing Citation| DegradedRefusal(["Fallback Refusal"])
 
-    subgraph Quota Protection & Fallback
-        DailyCheck{Daily Budget = 0 at 3:00 PM?} -->|Yes| StaticFallback[Degraded Static Excerpt Mode\n18.5ms latency | Zero Tokens Used]
+    subgraph Quota Protection and Fallback
+        DailyCheck{"Daily Budget Exhausted at 3:00 PM?"} -->|Yes| StaticFallback["Degraded Static Excerpt Mode<br/>18.5ms latency | Zero Tokens Used"]
     end
 ```
 
 ---
 
-## 2. Key Human Engineering Decisions & Discoveries
+## 2. Key Engineering Decisions & Discoveries
 
-The assignment explicitly evaluates **the human in the loop**: how the candidate directed the AI assistant, caught failures, made real-world trade-offs, and defended engineering choices.
+This project focuses on the realities of production ML engineering: handling quota exhaustion, modeling tail latencies, avoiding synchronized retries, and designing graceful degradation.
 
 ### Decision 1: LaTeX Source Ingestion vs. PDF OCR (The Macro Discovery)
-* **What the AI assistant proposed:** Extracting text directly from the supplied PDF files using standard PDF parsers.
-* **Why I overruled it:** Academic PDFs scramble multi-column layouts, break equations across lines, and obscure section numbers. We extracted the raw LaTeX tarballs (`.tar.gz`) instead.
-* **The Critical Catch:** Academic authors write papers using custom macros. In *Moshi*, the authors wrote `\ours{}` for Moshi, `\mimi{}` for their codec, and `\helium{}` for their LM. In *Dynamic Chunking*, they wrote `\model{}` for H-Net. A naive keyword search returns **0 hits** for "Mimi" or "H-Net" on raw TeX! I mandated regex macro resolution prior to chunking, which boosted retrieval match scores by **101%**.
+* **Standard Approach:** Extracting text directly from PDF files using standard PDF parsers.
+* **Why We Overruled It:** Academic PDFs scramble multi-column layouts, break equations across lines, and lose section hierarchies. We extracted the raw LaTeX tarballs (`.tar.gz`) instead.
+* **The Entity Resolution Discovery:** Academic authors write papers using custom macros. In *Moshi*, the authors wrote `\ours{}` for Moshi, `\mimi{}` for their codec, and `\helium{}` for their LM. In *Dynamic Chunking*, they wrote `\model{}` for H-Net. Naive keyword search returns **0 hits** for "Mimi" or "H-Net" on raw TeX. We built regex macro resolution prior to tokenization, which boosted retrieval match scores by **101%**.
 
 ### Decision 2: The Hidden Bottleneck (OTPM vs. RPM/TPM)
-* Prior to benchmarking, common intuition assumes Requests Per Minute (RPM) or Total Tokens Per Minute (TPM) are the primary constraints.
-* **Our empirical measurement on Groq:** Groq allows **1,000 RPM** and **8,000 TPM**, but enforces a hidden **1,000 Output Tokens Per Minute (OTPM)** cap! 
-* A burst of 10 users requesting 150-word answers burns 1,500 output tokens, tripping a global `HTTP 429` freeze for 13 seconds. This shaped our prompt design: outputs are strictly bounded to concise, cited facts rather than verbose essays.
+* Common intuition assumes Requests Per Minute (RPM) or Total Tokens Per Minute (TPM) are the primary constraints.
+* **Our empirical measurement on Groq:** Groq allows **1,000 RPM** and **8,000 TPM**, but enforces a hidden **1,000 Output Tokens Per Minute (OTPM)** cap.
+* A burst of 10 users requesting 150-word answers burns 1,500 output tokens, tripping a global `HTTP 429` freeze for 13 seconds. This shaped our prompt design: outputs are strictly bounded to concise, cited facts rather than verbose text.
 
 ### Decision 3: Setting A (Small Chunks) Overruled Setting B (Big Chunks)
 * Standard RAG intuition favors large context chunks (Setting B: 600 words, top-5 chunks = ~3,800 prompt tokens).
-* **The Empirical Result:** In Table 3, Setting B caused **66.7% of requests to fail** because 2 concurrent requests exhausted the 8,000 TPM bucket.
-* I selected **Setting A (200 words, top-3 chunks = ~850 prompt tokens)**: it achieved the highest compliance (**73.3%**), fastest Time-to-First-Token (**164.5 ms**), and allowed 4× greater concurrent capacity.
+* **The Empirical Result:** In Table 3 benchmarks, Setting B caused **66.7% of requests to fail** because 2 concurrent requests exhausted the 8,000 TPM bucket.
+* We selected **Setting A (200 words, top-3 chunks = ~850 prompt tokens)**: it achieved the highest compliance (**73.3%**), fastest Time-to-First-Token (**164.5 ms**), and allowed 4× greater concurrent capacity.
 
 ### Decision 4: The 3:00 PM Daily Budget Cutoff (Graceful Degradation)
-* When daily budget hits zero, naive systems return `HTTP 500` or crash.
-* I designed a **Degraded Static Fallback**: the pipeline executes local BM25 in 18ms and returns the exact paper excerpts directly with a clear banner. Zero users are turned away; zero additional API cost is incurred.
+* When daily budget hits zero, naive systems return `HTTP 500` or unhandled exceptions.
+* We engineered a **Degraded Static Fallback**: the pipeline executes local BM25 in 18ms and returns the exact paper excerpts directly with a clear banner. Zero users are turned away; zero additional API cost is incurred.
 
 ---
 
@@ -136,10 +135,10 @@ python main.py --benchmark
 
 ## 5. Repository Structure
 ```
-VAANI/
-├── README.md                          # Executive architecture & quickstart guide
-├── writeup.md                         # Formal 2-page writeup (Headings 1-8 + Tables)
-├── HUMAN_DECISIONS_AND_CONVERSATION.md# Audit trail of human decisions & prompt logs
+the-relay/
+├── README.md                          # Architecture & quickstart guide
+├── writeup.md                         # Technical design report & empirical findings
+├── HUMAN_DECISIONS_AND_CONVERSATION.md# Engineering audit trail & prompt logs
 ├── results.csv                        # 147 raw benchmark rows (strict schema)
 ├── main.py                            # Interactive CLI entrypoint
 ├── requirements.txt                   # Production dependencies
@@ -148,10 +147,15 @@ VAANI/
 │   ├── pipeline.py                    # 5-step pipeline with loops, branches & fallback
 │   ├── standin_service.py             # Calibrated Groq mock service (TTFT & rate limiters)
 │   ├── retriever.py                   # BM25 + LaTeX AST metadata retriever
-│   ├── questions.py                   # 15 custom evaluation questions
+│   ├── questions.py                   # 15 technical evaluation questions
 │   ├── run_benchmarks.py              # Automated benchmark execution harness
 │   ├── compute_tables.py              # Table generation script computing from CSV
 │   └── probe_groq.py                  # Live empirical probe script
+│
+├── data/                              # Pre-indexed Semantic Chunks
+│   ├── chunks_a.json                  # Setting A (200 words, 50 overlap)
+│   ├── chunks_b.json                  # Setting B (600 words, 100 overlap)
+│   └── chunks_c.json                  # Setting C (400 words, re-ranked)
 │
 └── extracted/                         # Extracted arXiv LaTeX Source Archives
     ├── attention_1706_03762v7/        # Attention Is All You Need (v7)

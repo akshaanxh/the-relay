@@ -1,5 +1,5 @@
 # The Relay: Engineering an Adaptive, Rate-Constrained Research Assistant
-**Role:** ML Engineering Intern Assignment — Vaani Research  
+**Role:** Vaani Research — Production AI Systems Project  
 **Submission Artifacts:** Write-up, `results.csv`, Pipeline Codebase, Calibrated Stand-in Service  
 
 ---
